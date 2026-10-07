@@ -310,7 +310,8 @@ void onCmd(android_app* app, int32_t cmd) {
 void android_main(android_app* app) {
     app->onAppCmd = onCmd;
     app->onInputEvent = onInput;
-    android_app_set_motion_event_filter(app, nullptr);   // also deliver gamepad axis events
+    //android_app_set_motion_event_filter(app, nullptr);
+    // also deliver gamepad axis events
     game_init();
 
     const auto period = std::chrono::microseconds(1000000 / TARGET_FPS);
